@@ -43,8 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HttpHelper.cs" />
+    <Compile Include="PictureHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="imageHelper.cs" />
+    <Compile Include="QRCodeHelper.cs" />
+    <Compile Include="RegexHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
