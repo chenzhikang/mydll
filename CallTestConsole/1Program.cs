@@ -13,7 +13,6 @@ namespace CallTestConsole
 {
     class Program
     {
-
         /*
         1种子网址
         2获取所有链接
@@ -28,7 +27,7 @@ namespace CallTestConsole
 
             for (int i = 1; i <= 100; i = i + 10)
             {
-                scaleHelper.ConvertImageSize(filepath, 500,0, i);
+                imageHelper.ConvertImageSize(filepath, 500, 0, i);
             }
             Console.WriteLine("生成结束");
             //string domain = "cnblogs.com";

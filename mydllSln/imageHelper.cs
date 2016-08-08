@@ -10,9 +10,17 @@ using System.Threading.Tasks;
 
 namespace mydll
 {
-    public class scaleHelper
+    public class imageHelper
     {
-
+        public string MakeWaterImg(string sourceimagepath, string waterpath, int toumingdu, bool createnew = false)
+        {
+            //把水印图画到目标图，保存图片
+            Image waterimg = Image.FromFile(waterpath);
+            Image sourceimg = Image.FromFile(sourceimagepath);
+            Graphics g = Graphics.FromImage(sourceimg);
+          //  g.DrawImage(waterimg,);
+             
+        }
         private static ImageCodecInfo GetImageCodeinfo(string extension)
         {
             var allinfos = ImageCodecInfo.GetImageEncoders();
@@ -44,7 +52,7 @@ namespace mydll
                 string saveFilePath = "";
                 string extension = Path.GetExtension(sourcePath);
                 string front = sourcePath.Substring(0, sourcePath.LastIndexOf("."));
-                saveFilePath = front + "_" + maxWidth + "_" + maxHeight + "_"+zhiliang+extension;
+                saveFilePath = front + "_" + maxWidth + "_" + maxHeight + "_" + zhiliang + extension;
 
                 if (File.Exists(saveFilePath))
                 {
