@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace mydll
 {
-    public class Class1
+
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class QRCodeHelper
     {
     }
 }
