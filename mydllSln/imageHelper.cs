@@ -18,8 +18,8 @@ namespace mydll
             Image waterimg = Image.FromFile(waterpath);
             Image sourceimg = Image.FromFile(sourceimagepath);
             Graphics g = Graphics.FromImage(sourceimg);
-          //  g.DrawImage(waterimg,);
-             
+            //  g.DrawImage(waterimg,);
+            return "";
         }
         private static ImageCodecInfo GetImageCodeinfo(string extension)
         {
