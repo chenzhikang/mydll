@@ -13,6 +13,5 @@ namespace CallTestConsole
 
             Console.Read();
         }
-
     }
 }

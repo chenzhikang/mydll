@@ -31,8 +31,8 @@ namespace mydll
             Bitmap bitmap = GenerateBitmap(info);
             MemoryStream mstream = new MemoryStream();
             bitmap.Save(mstream, ImageFormat.Jpeg);
-            byte[] picarray = mstream.GetBuffer();        
-              
+            byte[] picarray = mstream.GetBuffer();
+
             mstream.Close();
             string picbase64 = "data:image/png;base64," + Convert.ToBase64String(picarray);//将8位无符号的整数
             return picbase64;
