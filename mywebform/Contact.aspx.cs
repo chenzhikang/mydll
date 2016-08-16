@@ -11,6 +11,8 @@ namespace mywebform
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int statecode = int.Parse(Request.QueryString.Get("code"));
+            throw new HttpException(statecode, "not found!");
 
         }
     }

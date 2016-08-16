@@ -16,6 +16,6 @@
     </DataSource>
   </DataSources>
   <ContextParameters>
-    <ContextParameter Name="webserver" Value="localhost/index.html" />
+    <ContextParameter Name="webserver" Value="localhost/" />
   </ContextParameters>
 </WebTest>
