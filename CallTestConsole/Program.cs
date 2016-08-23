@@ -1,5 +1,5 @@
 ﻿using fav._6655.com;
-using mydll;
+using MyDllCollection;
 using System;
 using System.Diagnostics;
 using System.Text;

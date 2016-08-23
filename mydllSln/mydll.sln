@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mydll", "mydll.csproj", "{83F51104-6DCF-44A0-A9EC-541AC397AA74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyDllCollection", "MyDllCollection.csproj", "{83F51104-6DCF-44A0-A9EC-541AC397AA74}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallTestConsole", "..\CallTestConsole\CallTestConsole.csproj", "{2F2DFBE6-EF9C-4C66-BC5F-8D8835411EA1}"
 EndProject

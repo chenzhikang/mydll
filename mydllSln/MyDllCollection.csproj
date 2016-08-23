@@ -7,8 +7,8 @@
     <ProjectGuid>{83F51104-6DCF-44A0-A9EC-541AC397AA74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>mydll</RootNamespace>
-    <AssemblyName>mydll</AssemblyName>
+    <RootNamespace>MyDllCollection</RootNamespace>
+    <AssemblyName>MyDllCollection</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>

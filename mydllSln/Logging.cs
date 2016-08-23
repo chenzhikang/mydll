@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using log4net;
 using log4net.Config;
 using System.IO;
-namespace mydll
+namespace MyDllCollection
 {
     public class Logging
     {
@@ -18,7 +18,7 @@ namespace mydll
         public static void LogInfo(Type t, string msg)
         {
            //  BasicConfigurator.Configure();//配置简单的仓库 logger 和appender。
-            //   XmlConfigurator.ConfigureAndWatch(new FileInfo(@"D:\Repos\mydll\CallTestConsole\app.config"));
+            //   XmlConfigurator.ConfigureAndWatch(new FileInfo(@"D:\Repos\MyDllCollection\CallTestConsole\app.config"));
             var loggers = LogManager.GetCurrentLoggers();
             var mylogger = LogManager.GetLogger("mylogger");
             mylogger.Debug("asdfsadfasdf");

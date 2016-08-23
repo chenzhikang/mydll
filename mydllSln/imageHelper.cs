@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mydll
+namespace MyDllCollection
 {
     public class imageHelper
     {

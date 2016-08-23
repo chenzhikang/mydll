@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
-namespace mydll
+namespace MyDllCollection
 {
     public class RegexHelper
     {
