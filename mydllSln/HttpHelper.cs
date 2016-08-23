@@ -11,12 +11,11 @@ namespace MyDllCollection
 {
     public class HttpHelper
     {
-
-        public static string ConvertFullHttpUrl(string oldurl,string domain )
+        public static string ConvertFullHttpUrl(string oldurl, string domain)
         {
             if (oldurl.StartsWith("/"))
             {
-                return "http://"+domain+oldurl;
+                return "http://" + domain + oldurl;
             }
             oldurl = oldurl.StartsWith("http://") || oldurl.StartsWith("https://") ? oldurl : "http://" + oldurl;
             return oldurl;
@@ -48,7 +47,8 @@ namespace MyDllCollection
                         return true;
                     }
                 }
-                else {
+                else
+                {
                     return domain == matcheddomain + "/" ? true : false;
                 }
 
