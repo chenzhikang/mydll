@@ -13,7 +13,7 @@ namespace MyDllCollection
 
         public Logging()
         {
-
+            //nuget版本升级测试
         }
         public static void LogInfo(Type t, string msg)
         {
