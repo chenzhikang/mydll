@@ -1,14 +1,14 @@
 ﻿/*
+javascript mycssloading.js
 name:jq css loading  插件
 author:abc
-date:
-version:1.0.0.0
-license:apache 
+date:2016-8-23 14:02:01
+version:1.0.*
+license:MIT
 */
 (function ($) {
     $.fn.mycssloading = function (options) {
         //Defaults setting
-
         var settings = $.extend(
             {
                 speed: 1000,
@@ -18,7 +18,6 @@ license:apache
                 style: "default",
             }, options
             );
-
         var $this = $(this);
         var loadingwrapper = '<div class="spinner"></div>';
         var rect1 = ' <div class="rect1"></div>';
