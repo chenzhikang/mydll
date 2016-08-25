@@ -50,6 +50,7 @@
     <Compile Include="Tasks\JobConfiguration.cs" />
     <Compile Include="Tasks\IJob.cs" />
     <Compile Include="Tasks\MyJob1.cs" />
+    <Compile Include="Tasks\MyJob2.cs" />
     <Compile Include="Tasks\Task.cs" />
     <Compile Include="Tasks\TaskManager.cs" />
     <Compile Include="Tasks\TaskThread.cs" />

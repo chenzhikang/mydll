@@ -6,32 +6,22 @@ using System.Threading.Tasks;
 
 namespace CallTestConsole.Tasks
 {
-
     public class MyJob1 : IJob
     {
-        public JobConfiguration Config
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+        int i = 0;
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public void Execute(object sender)
+        public void Execute()
         {
+            i++;
             Console.WriteLine(DateTime.Now);
             Console.WriteLine("开始执行任务···");
-            Console.WriteLine("正在执行任务···");
+            Console.WriteLine("正在执行任务···" + i);
             Console.WriteLine("结束执行任务···");
             Console.WriteLine();
+            if (i > 2)
+                throw new NotImplementedException();
         }
-
-        public void HandleException(object sender)
+        public void HandleException(Exception ex)
         {
             //log
         }

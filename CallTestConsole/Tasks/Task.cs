@@ -12,15 +12,18 @@ namespace CallTestConsole.Tasks
     /// </summary>
     public class Task
     {
+        private bool Isrunning { get; set; }
+
         /// <summary>
         /// 配置项
         /// </summary>
-        private JobConfiguration Config { get; set; }
+        public JobConfiguration Config { get; }
         private IJob _job;
-        public bool IsRunning { get; private set; }
-        public Task(IJob job)
+
+        public Task(IJob job, JobConfiguration config)
         {
             _job = job;
+            Config = config;
         }
 
         /// <summary>
@@ -28,8 +31,18 @@ namespace CallTestConsole.Tasks
         /// </summary>
         public void ExecuteTask()
         {
-            this.IsRunning = true;           
-            _job = this.CreateObj(this.Config.TypeName);
+            if (Isrunning)
+            {
+                return;
+            }
+            Isrunning = true;
+            #region MyRegion
+            if (_job == null && !string.IsNullOrEmpty(this.Config.TypeName))//如果未传入的job对象，且TypeName不为空，就反射出一个类实例
+            {
+                _job = this.CreateObj(this.Config.TypeName);
+            }
+            #endregion            
+
             try
             {
                 _job.Execute();
@@ -37,9 +50,12 @@ namespace CallTestConsole.Tasks
             catch (Exception ex)
             {
                 _job.HandleException(ex);
-                //TODO：log
+                if (Config.StopOnException)
+                {
+                    this.Config.Enabled = false;
+                }
             }
-            this.IsRunning = false;
+            Isrunning = false;
         }
 
         /// <summary>

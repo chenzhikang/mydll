@@ -1,51 +1,60 @@
-﻿using fav._6655.com;
+﻿using CallTestConsole.Tasks;
+using fav._6655.com;
 using MyDllCollection;
 using System;
 using System.Diagnostics;
 using System.Text;
+
 using System.Timers;
 namespace CallTestConsole
 {
     class Program
     {
-        private const int count = 1000;
         static void Main(string[] args)
         {
-            myTask job1 = new myTask(new JobConfiguration
-            {
-                AllowLoop = true,
-                Interval = 2000,
-                StopOnException = true
-            });
-            myTask2 task2 = new myTask2(new JobConfiguration
-            {
-                AllowLoop = false,
-                Interval = 1000,
-                StopOnException = false
-            });
+            // TaskManager.Instance.CreateAllTaskthread();
+            // TaskManager.Instance.StartAllthread();
 
-            JobExecutor jexecutor = new JobExecutor(job1);
-            JobExecutor jexecutor2 = new JobExecutor(task2);
-            jexecutor.Start();
-            jexecutor2.Start();
+            Clock.Instance.StartClock();
 
-
-            Console.WriteLine("over");
+            Console.WriteLine("executing````");
             Console.Read();
         }
+
     }
-    
+    public class Clock
+    {
+        private static Clock _instance = new Clock();
+        private Timer _timer = new Timer(1000);
+        private Clock()
+        {
+            _timer.AutoReset = true;
+            _timer.Enabled = true;
+            _timer.Elapsed += TimerHandler;
 
-    /// <summary>
-    /// 任务接口
-    /// </summary>
-    /// 
 
-  
 
-    /// <summary>
-    /// 来根据config决定定时的具体实现，并调用回调方法
-    /// </summary>
+        }
+        /// <summary>
+        /// 启动时钟
+        /// </summary>
+        public void StartClock()
+        {
+            _timer.Start();
+        }
+        public static Clock Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+        private void TimerHandler(object sender, ElapsedEventArgs e)
+        {
+            DateTime signalTime = e.SignalTime;
+            Console.WriteLine(signalTime.ToString("mmss.fff"));
+        }
+    }
 
 }
 
