@@ -31,9 +31,6 @@ namespace CallTestConsole
             _timer.AutoReset = true;
             _timer.Enabled = true;
             _timer.Elapsed += TimerHandler;
-
-
-
         }
         /// <summary>
         /// 启动时钟
