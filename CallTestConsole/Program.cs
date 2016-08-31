@@ -1,31 +1,28 @@
 ﻿using CallTestConsole.Tasks;
-using fav._6655.com;
+using mydll;
 using MyDllCollection;
 using System;
 using System.Diagnostics;
 using System.Text;
-
+using System.Threading;
 using System.Timers;
 namespace CallTestConsole
 {
     class Program
     {
         static void Main(string[] args)
-        {
-            // TaskManager.Instance.CreateAllTaskthread();
-            // TaskManager.Instance.StartAllthread();
+        {            
 
-            Clock.Instance.StartClock();
-
-            Console.WriteLine("executing````");
+            //TODO:静态方法的线程安全性
+            Console.WriteLine("over````");
             Console.Read();
         }
-
+ 
     }
     public class Clock
     {
         private static Clock _instance = new Clock();
-        private Timer _timer = new Timer(1000);
+        private System.Timers.Timer _timer = new System.Timers.Timer(1000);
         private Clock()
         {
             _timer.AutoReset = true;
