@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace fav._6655.com
+namespace mydll
 {
     public enum TDesMode
     {
@@ -23,45 +23,45 @@ namespace fav._6655.com
         // 置换函数P
         public static byte[] BitPM = { 15, 6, 19, 20, 28, 11, 27, 16, 0, 14, 22, 25, 4, 17, 30, 9, 1, 7, 23, 13, 31, 26, 2, 8, 18, 12, 29, 5, 21, 10, 3, 24 };
         // S盒
-        public static byte[][] sBox = new byte[][] { new byte[] { 
-                14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7, 
-                0, 15, 7, 4, 14, 2, 13, 1, 10, 6, 12, 11, 9, 5, 3, 8, 
-                4, 1, 14, 8, 13, 6, 2, 11, 15, 12, 9, 7, 3, 10, 5, 0, 
+        public static byte[][] sBox = new byte[][] { new byte[] {
+                14, 4, 13, 1, 2, 15, 11, 8, 3, 10, 6, 12, 5, 9, 0, 7,
+                0, 15, 7, 4, 14, 2, 13, 1, 10, 6, 12, 11, 9, 5, 3, 8,
+                4, 1, 14, 8, 13, 6, 2, 11, 15, 12, 9, 7, 3, 10, 5, 0,
                 15, 12, 8, 2, 4, 9, 1, 7, 5, 11, 3, 14, 10, 0, 6, 13
-             }, new byte[] { 
-                15, 1, 8, 14, 6, 11, 3, 4, 9, 7, 2, 13, 12, 0, 5, 10, 
-                3, 13, 4, 7, 15, 2, 8, 14, 12, 0, 1, 10, 6, 9, 11, 5, 
-                0, 14, 7, 11, 10, 4, 13, 1, 5, 8, 12, 6, 9, 3, 2, 15, 
+             }, new byte[] {
+                15, 1, 8, 14, 6, 11, 3, 4, 9, 7, 2, 13, 12, 0, 5, 10,
+                3, 13, 4, 7, 15, 2, 8, 14, 12, 0, 1, 10, 6, 9, 11, 5,
+                0, 14, 7, 11, 10, 4, 13, 1, 5, 8, 12, 6, 9, 3, 2, 15,
                 13, 8, 10, 1, 3, 15, 4, 2, 11, 6, 7, 12, 0, 5, 14, 9
-             }, new byte[] { 
-                10, 0, 9, 14, 6, 3, 15, 5, 1, 13, 12, 7, 11, 4, 2, 8, 
-                13, 7, 0, 9, 3, 4, 6, 10, 2, 8, 5, 14, 12, 11, 15, 1, 
-                13, 6, 4, 9, 8, 15, 3, 0, 11, 1, 2, 12, 5, 10, 14, 7, 
+             }, new byte[] {
+                10, 0, 9, 14, 6, 3, 15, 5, 1, 13, 12, 7, 11, 4, 2, 8,
+                13, 7, 0, 9, 3, 4, 6, 10, 2, 8, 5, 14, 12, 11, 15, 1,
+                13, 6, 4, 9, 8, 15, 3, 0, 11, 1, 2, 12, 5, 10, 14, 7,
                 1, 10, 13, 0, 6, 9, 8, 7, 4, 15, 14, 3, 11, 5, 2, 12
-             }, new byte[] { 
-                7, 13, 14, 3, 0, 6, 9, 10, 1, 2, 8, 5, 11, 12, 4, 15, 
-                13, 8, 11, 5, 6, 15, 0, 3, 4, 7, 2, 12, 1, 10, 14, 9, 
-                10, 6, 9, 0, 12, 11, 7, 13, 15, 1, 3, 14, 5, 2, 8, 4, 
+             }, new byte[] {
+                7, 13, 14, 3, 0, 6, 9, 10, 1, 2, 8, 5, 11, 12, 4, 15,
+                13, 8, 11, 5, 6, 15, 0, 3, 4, 7, 2, 12, 1, 10, 14, 9,
+                10, 6, 9, 0, 12, 11, 7, 13, 15, 1, 3, 14, 5, 2, 8, 4,
                 3, 15, 0, 6, 10, 1, 13, 8, 9, 4, 5, 11, 12, 7, 2, 14
-             }, new byte[] { 
-                2, 12, 4, 1, 7, 10, 11, 6, 8, 5, 3, 15, 13, 0, 14, 9, 
-                14, 11, 2, 12, 4, 7, 13, 1, 5, 0, 15, 10, 3, 9, 8, 6, 
-                4, 2, 1, 11, 10, 13, 7, 8, 15, 9, 12, 5, 6, 3, 0, 14, 
+             }, new byte[] {
+                2, 12, 4, 1, 7, 10, 11, 6, 8, 5, 3, 15, 13, 0, 14, 9,
+                14, 11, 2, 12, 4, 7, 13, 1, 5, 0, 15, 10, 3, 9, 8, 6,
+                4, 2, 1, 11, 10, 13, 7, 8, 15, 9, 12, 5, 6, 3, 0, 14,
                 11, 8, 12, 7, 1, 14, 2, 13, 6, 15, 0, 9, 10, 4, 5, 3
-             }, new byte[] { 
-                12, 1, 10, 15, 9, 2, 6, 8, 0, 13, 3, 4, 14, 7, 5, 11, 
-                10, 15, 4, 2, 7, 12, 9, 5, 6, 1, 13, 14, 0, 11, 3, 8, 
-                9, 14, 15, 5, 2, 8, 12, 3, 7, 0, 4, 10, 1, 13, 11, 6, 
+             }, new byte[] {
+                12, 1, 10, 15, 9, 2, 6, 8, 0, 13, 3, 4, 14, 7, 5, 11,
+                10, 15, 4, 2, 7, 12, 9, 5, 6, 1, 13, 14, 0, 11, 3, 8,
+                9, 14, 15, 5, 2, 8, 12, 3, 7, 0, 4, 10, 1, 13, 11, 6,
                 4, 3, 2, 12, 9, 5, 15, 10, 11, 14, 1, 7, 6, 0, 8, 13
-             }, new byte[] { 
-                4, 11, 2, 14, 15, 0, 8, 13, 3, 12, 9, 7, 5, 10, 6, 1, 
-                13, 0, 11, 7, 4, 9, 1, 10, 14, 3, 5, 12, 2, 15, 8, 6, 
-                1, 4, 11, 13, 12, 3, 7, 14, 10, 15, 6, 8, 0, 5, 9, 2, 
+             }, new byte[] {
+                4, 11, 2, 14, 15, 0, 8, 13, 3, 12, 9, 7, 5, 10, 6, 1,
+                13, 0, 11, 7, 4, 9, 1, 10, 14, 3, 5, 12, 2, 15, 8, 6,
+                1, 4, 11, 13, 12, 3, 7, 14, 10, 15, 6, 8, 0, 5, 9, 2,
                 6, 11, 13, 8, 1, 4, 10, 7, 9, 5, 0, 15, 14, 2, 3, 12
-             }, new byte[] { 
-                13, 2, 8, 4, 6, 15, 11, 1, 10, 9, 3, 14, 5, 0, 12, 7, 
-                1, 15, 13, 8, 10, 3, 7, 4, 12, 5, 6, 11, 0, 14, 9, 2, 
-                7, 11, 4, 1, 9, 12, 14, 2, 0, 6, 10, 13, 15, 3, 5, 8, 
+             }, new byte[] {
+                13, 2, 8, 4, 6, 15, 11, 1, 10, 9, 3, 14, 5, 0, 12, 7,
+                1, 15, 13, 8, 10, 3, 7, 4, 12, 5, 6, 11, 0, 14, 9, 2,
+                7, 11, 4, 1, 9, 12, 14, 2, 0, 6, 10, 13, 15, 3, 5, 8,
                 2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11
              } };
         // 选择置换PC-1
@@ -69,7 +69,7 @@ namespace fav._6655.com
         // 选择置换PC-2
         public static byte[] BitPMC2 = { 13, 16, 10, 23, 0, 4, 2, 27, 14, 5, 20, 9, 22, 18, 11, 3, 25, 7, 15, 6, 26, 19, 12, 1, 40, 51, 30, 36, 46, 54, 29, 39, 50, 44, 32, 47, 43, 48, 38, 55, 33, 52, 45, 41, 49, 35, 28, 31 };
         #endregion
-
+        private static object obj = new object();
         static DES()
         {
             subKey = new byte[0x10][];
@@ -108,7 +108,7 @@ namespace fav._6655.com
 
         private static void ConversePermutation(byte[] inData)
         {
-            byte[] newData = new byte[8] ;
+            byte[] newData = new byte[8];
             int i = 0;
             // Unsupported function or procedure: 'FillChar'
             FillChar(newData, 8, 0);
@@ -213,7 +213,7 @@ namespace fav._6655.com
 
         private static void MakeKey(byte[] inKey, ref byte[][] outKey)
         {
-            byte[] bitDisplace = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
+            byte[] bitDisplace = { 1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1 };
 
             byte[] outData56 = new byte[7];
             byte[] key28l = new byte[4];
@@ -230,7 +230,7 @@ namespace fav._6655.com
             key28r[1] = outData56[4];
             key28r[2] = outData56[5];
             key28r[3] = outData56[6];
-            for (i = 0; i <= 15; i ++ )
+            for (i = 0; i <= 15; i++)
             {
                 CycleMove(key28l, bitDisplace[i]);
                 CycleMove(key28r, bitDisplace[i]);
@@ -251,7 +251,7 @@ namespace fav._6655.com
             byte[] buf = new byte[8];
             int i = 0;
             Expand(inData, outBuf);
-            for (i = 0; i <= 5; i ++ )
+            for (i = 0; i <= 5; i++)
             {
                 outBuf[i] = (byte)(outBuf[i] ^ subKey[i]);
             }
@@ -263,16 +263,16 @@ namespace fav._6655.com
             buf[5] = (byte)(((outBuf[3] & 0x03) << 4) | (outBuf[4] >> 4));
             buf[6] = (byte)(((outBuf[4] & 0x0f) << 2) | (outBuf[5] >> 6));
             buf[7] = (byte)(outBuf[5] & 0x3f);
-            for (i = 0; i <= 7; i ++ )
+            for (i = 0; i <= 7; i++)
             {
                 buf[i] = SI((byte)i, buf[i]);
             }
-            for (i = 0; i <= 3; i ++ )
+            for (i = 0; i <= 3; i++)
             {
                 outBuf[i] = (byte)((buf[i * 2] << 4) | buf[i * 2 + 1]);
             }
             Permutation(outBuf);
-            for (i = 0; i <= 3; i ++ )
+            for (i = 0; i <= 3; i++)
             {
                 outData[i] = outBuf[i];
             }
@@ -405,7 +405,7 @@ namespace fav._6655.com
                 for (int j = 0; j < 8; j++)
                 {
                     //StrByte[j] = (byte)Str[(((I << 3) + j) + 1) - 1];
-                    StrByte[j] = (byte)Str[j+i*8];
+                    StrByte[j] = (byte)Str[j + i * 8];
                 }
                 DesData(TDesMode.dmEncry, StrByte, ref OutByte);
 
@@ -428,46 +428,51 @@ namespace fav._6655.com
         /// <returns>解密后的字符串</returns>
         public static string DecryStr(string Str, string Key)
         {
-            byte[] StrByte = new byte[8];
-            byte[] OutByte = new byte[8];
-            byte[] KeyByte = new byte[8];
-
-            // Undeclared identifier: 'HexToStr'
-            Str = HexToStr(Str);
-            if (Key.Length < 8)
+            lock (obj)
             {
-                while (Key.Length < 8)
+
+
+                byte[] StrByte = new byte[8];
+                byte[] OutByte = new byte[8];
+                byte[] KeyByte = new byte[8];
+
+                // Undeclared identifier: 'HexToStr'
+                Str = HexToStr(Str);
+                if (Key.Length < 8)
                 {
-                    Key = Key + (char)(0);
+                    while (Key.Length < 8)
+                    {
+                        Key = Key + (char)(0);
+                    }
                 }
-            }
-            for (int j = 0; j < 8; j++)
-            {
-                KeyByte[j] = (byte)(Key[j]);
-            }
-            MakeKey(KeyByte, ref subKey);
-            string StrResult = string.Empty;
-
-            for (int i = 0; i < Str.Length / 8; i++)
-            {
                 for (int j = 0; j < 8; j++)
                 {
-                    StrByte[j] = (byte)(Str[i * 8 + j]);
+                    KeyByte[j] = (byte)(Key[j]);
                 }
+                MakeKey(KeyByte, ref subKey);
+                string StrResult = string.Empty;
 
-                DesData(TDesMode.dmDecry, StrByte, ref OutByte);
-
-                for (int j = 0; j < 8; j++)
+                for (int i = 0; i < Str.Length / 8; i++)
                 {
-                    StrResult = StrResult + (char)(OutByte[j]);
-                }
-            }
-            while ((StrResult.Length > 0) && ((int)(StrResult[StrResult.Length-1]) == 0))
-            {
-                StrResult = StrResult.Remove(StrResult.Length - 1, 1);
-            }
+                    for (int j = 0; j < 8; j++)
+                    {
+                        StrByte[j] = (byte)(Str[i * 8 + j]);
+                    }
 
-            return StrResult;
+                    DesData(TDesMode.dmDecry, StrByte, ref OutByte);
+
+                    for (int j = 0; j < 8; j++)
+                    {
+                        StrResult = StrResult + (char)(OutByte[j]);
+                    }
+                }
+                while ((StrResult.Length > 0) && ((int)(StrResult[StrResult.Length - 1]) == 0))
+                {
+                    StrResult = StrResult.Remove(StrResult.Length - 1, 1);
+                }
+
+                return StrResult;
+            }
         }
 
         /// <summary>
@@ -510,7 +515,7 @@ namespace fav._6655.com
 
                 for (int j = 0; j < 8; j++)
                 {
-                    bsResult[8*i +j] = OutByte[j];
+                    bsResult[8 * i + j] = OutByte[j];
                 }
                 //StrResult += encoding.GetString(OutByte);
                 //for (int j = 0; j < 8; j++)
@@ -519,7 +524,7 @@ namespace fav._6655.com
                 // }
             }
             StrResult = encoding.GetString(bsResult);
-            while ((StrResult.Length > 0) && ((int)(StrResult[StrResult.Length-1]) == 0))
+            while ((StrResult.Length > 0) && ((int)(StrResult[StrResult.Length - 1]) == 0))
             {
                 StrResult = StrResult.Remove(StrResult.Length - 1, 1);
             }
@@ -604,115 +609,7 @@ namespace fav._6655.com
             return result;
         }
 
-        //public static void EncryBuf(string Str, string Key, string buf, int strlen)
-        //{
-        //    byte[] StrByte = new byte[8];
-        //    byte[] OutByte = new byte[8];
-        //    byte[] KeyByte = new byte[8];
-        //    // StrResult: String;
-        //    int I = 0;
-        //    int J = 0;
-        //    for (J = 0; J <= 7; J++)
-        //    {
-        //        KeyByte[J] = (byte)(Key[J]);
-        //    }
-        //    makeKey(KeyByte, subKey);
-        //    for (I = 0; I <= strlen / 8 - 1; I++)
-        //    {
-        //        for (J = 0; J <= 7; J++)
-        //        {
-        //            StrByte[J] = (byte)(Str[I * 8 + J]);
-        //        }
-        //        desData(TDesMode.dmEncry, StrByte, OutByte);
-        //        for (J = 0; J <= 7; J++)
-        //        {
-        //            buf[I * 8 + J] = ((char)(OutByte[J]));
-        //        }
-        //    }
-        //}
-
-        //public static void Decrybuf(string Str, string Key, string buf, int Strlen)
-        //{
-        //    byte[] StrByte = new byte[8];
-        //    byte[] OutByte = new byte[8];
-        //    byte[] KeyByte = new byte[8];
-        //    // StrResult: String;
-        //    int I = 0;
-        //    int J = 0;
-        //    for (J = 0; J <= 7; J++)
-        //    {
-        //        KeyByte[J] = (byte)(Key[J]);
-        //    }
-        //    makeKey(KeyByte, subKey);
-        //    for (I = 0; I <= Strlen / 8 - 1; I++)
-        //    {
-        //        for (J = 0; J <= 7; J++)
-        //        {
-        //            StrByte[J] = (byte)(Str[I * 8 + J]);
-        //        }
-        //        desData(TDesMode.dmDecry, StrByte, OutByte);
-        //        for (J = 0; J <= 7; J++)
-        //        {
-        //            buf[I * 8 + J] = ((char)(OutByte[J]));
-        //        }
-        //    }
-        //}
-
-        //public static void EncryFile(string origFileName, string destFileName, string key)
-        //{
-        //    FileStream f = null;
-        //    int size = 0;
-        //    string Str = null;
-        //    string EnStr = null;
-        //    // Undeclared identifier: 'fmOpenRead'
-        //    f = new FileStream(origFileName, fmOpenRead);
-        //    size = f.Length;
-        //    try
-        //    {
-        //        // Unsupported function or procedure: 'SetLength'
-        //        SetLength(Str, size);
-        //        f.ReadByte(Str[1], size);
-        //    }
-        //    finally
-        //    {
-        //        f = null;
-        //    }
-        //    EnStr = EncryStr(Str, key);
-        //    // Undeclared identifier: 'fmCreate'
-        //    f = new FileStream(destFileName, fmCreate);
-        //    f.WriteByte(EnStr[1], size);
-        //    f = null;
-        //}
-        //public static MemoryStream DecryFile(string FileName, string key)
-        //{
-        //    MemoryStream result = null;
-        //    FileStream f = null;
-        //    MemoryStream m = null;
-        //    int size = 0;
-        //    string Str = null;
-        //    string DeStr = null;
-        //    // Undeclared identifier: 'fmOpenRead'
-        //    f = new FileStream(FileName, fmOpenRead);
-        //    size = f.Length;
-        //    try
-        //    {
-        //        // Unsupported function or procedure: 'SetLength'
-        //        SetLength(Str, size);
-        //        f.ReadByte(Str[1], size);
-        //    }
-        //    finally
-        //    {
-        //        f = null;
-        //    }
-        //    // Undeclared identifier: 'DecryStr'
-        //    DeStr = DecryStr(Str, key);
-        //    m = new MemoryStream();
-        //    m.WriteByte(DeStr[1], size);
-        //    result = m;
-        //    return result;
-        //}
-
-        public static string StrToHex(string str)
+        private static string StrToHex(string str)
         {
             StringBuilder text = new StringBuilder();
 
@@ -724,7 +621,7 @@ namespace fav._6655.com
             return text.ToString();
         }
 
-        public static string HexToStr(string hex)
+        private static string HexToStr(string hex)
         {
             StringBuilder strReturn = new StringBuilder();
             for (int i = 0; i < hex.Length; i++)

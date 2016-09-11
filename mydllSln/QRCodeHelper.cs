@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using ZXing;
 using ZXing.Common;
 
-namespace mydll
+namespace MyDllCollection
 {
     /// <summary>
     /// 
