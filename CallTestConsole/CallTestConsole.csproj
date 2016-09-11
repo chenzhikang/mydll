@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="24-4CancellationToken.cs" />
+    <Compile Include="24-4CancellationTokenRegister.cs" />
     <Compile Include="MyChong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

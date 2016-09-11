@@ -11,13 +11,12 @@ namespace CallTestConsole
     class Program
     {
         static void Main(string[] args)
-        {            
+        {
+            var cancelRegister = new _24_4CancellationTokenRegister();
+            cancelRegister.Dowork();
 
-            //TODO:静态方法的线程安全性
-            Console.WriteLine("over````");
-            Console.Read();
         }
- 
+
     }
     public class Clock
     {
