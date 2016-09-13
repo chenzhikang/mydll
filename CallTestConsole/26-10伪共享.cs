@@ -13,7 +13,7 @@ namespace CallTestConsole
         //强制分开：4703、4665
         //伪共享冲突时：7667、9708、7850
         private int count = 1000000000;//10亿
-        int operations = 2;//
+        int operations = 2;//必须是2
         public void BeginWork()
         {
             Data data = new Data();
