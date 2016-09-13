@@ -12,8 +12,8 @@ namespace CallTestConsole
     {
         static void Main(string[] args)
         {
-            var cancelRegister = new _24_4CancellationTokenRegister();
-            cancelRegister.Dowork();
+            FalseShare falseshare = new FalseShare();
+            falseshare.BeginWork();
 
         }
 

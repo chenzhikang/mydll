@@ -69,6 +69,7 @@
     <Compile Include="imageHelper.cs" />
     <Compile Include="QRCodeHelper.cs" />
     <Compile Include="RegexHelper.cs" />
+    <Compile Include="UrlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
@@ -78,6 +79,7 @@
   <ItemGroup>
     <Content Include="css\mycssloading.css" />
     <Content Include="js\mycssloading.js" />
+    <Content Include="js\urlhelper.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
