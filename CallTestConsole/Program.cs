@@ -12,9 +12,11 @@ namespace CallTestConsole
     {
         static void Main(string[] args)
         {
-            _27_6ParallelFor parallel = new _27_6ParallelFor();
-            parallel.BeginWork();
+            Console.WriteLine("begin to compute");
 
+           
+
+            Console.Read();
         }
 
     }

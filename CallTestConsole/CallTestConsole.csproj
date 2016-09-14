@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1-1CPURate.cs" />
     <Compile Include="24-4CancellationToken.cs" />
     <Compile Include="24-4CancellationTokenRegister.cs" />
     <Compile Include="26-10伪共享.cs" />

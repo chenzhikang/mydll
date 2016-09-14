@@ -22,8 +22,6 @@ namespace CallTestConsole
 
             Console.ReadLine();
         }
-
-
         void GovForEachDemo()
         {
             // The sum of these elements is 40.
@@ -81,7 +79,6 @@ namespace CallTestConsole
                 });
             return totalSize;
         }
-
         #region MSDN Stop Demo
         /// <summary>
         /// MSDN demo
