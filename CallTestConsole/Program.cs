@@ -12,8 +12,8 @@ namespace CallTestConsole
     {
         static void Main(string[] args)
         {
-            FalseShare falseshare = new FalseShare();
-            falseshare.BeginWork();
+            _27_6ParallelFor parallel = new _27_6ParallelFor();
+            parallel.BeginWork();
 
         }
 

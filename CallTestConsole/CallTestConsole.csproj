@@ -47,6 +47,7 @@
     <Compile Include="24-4CancellationToken.cs" />
     <Compile Include="24-4CancellationTokenRegister.cs" />
     <Compile Include="26-10伪共享.cs" />
+    <Compile Include="27-6ParallelFor.cs" />
     <Compile Include="MyChong.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
